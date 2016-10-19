@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Lion King v0.1</title>
+        </head>
+
+        <body>
+            <script>
+                alert("The Lion King Aventure 2.0");
+                var player = prompt("What is your name?");
+                var start = confirm(player + " are you ready to get started on the journey to African Kingdom?");
+                var animal = "";
+                var score = 0;
+                if(start){
+                    game();
+                }
+                else
+                     end();
+
+                     function game(){
+                        animal = prompt("You come out of your den, as a new African Animal! You can be a Lion, Meercat, Warthog, or Field Mouse. Which animal will you be?").toLowerCase();
+
+                       if(animal == "lion"){
+                           alert("You are born a baby Lion");
+                     }
+                     else if(animal == "meercat"){
+                             alert("You are born a Meercat");
+                     }
+                     else if(animal == "warthog"){
+                            alert("You are born a Warthog");
+                     }
+                     else if(animal == "field mouse"){
+                              alert("You are born a baby Field Mouse"); 
+                     }
+                      else{
+                          alert(player+"No such thing as that wildabeast! You can no longer can go any far in this adventure!");
+                      }
+             
+                     
+            alert("You are now on your way to the way to the safe and sound Kingdom!");         
+var key = 4;
+
+var inventory = {
+  Lion: 4,
+  Meercat: 4,
+  Warthog: 4,
+  Field_Mouse:"yes please"
+  
+  
+}
+function checkInv(animal){
+    if(animal === "lion"){
+       return inventory.Lion;
+    }else if(animal === "meercat"){
+       return inventory.Meercat;
+    }else if(animal === "warthog"){
+       return inventory.Warthog;
+    }else{
+       return inventory.Field_Mouse;
+}
+}
+alert("You see two pathways; The muddy pathway and the smooth sandy pathway.");
+var choice = prompt("what pathway will you choose? The muddy pathway or the smooth sandy pathway.").toLowerCase();
+
+if(choice =="muddy"){
+  inventory.Lion = 1;
+  console.log("Lion = "+inventory.Lion);
+}
+else if(choice=="check"){
+   checkInv(animal);
+}
+else
+  {
+    alert("You picked the right path! Wooohooo!");
+    console.log("Lion = "+inventory.Lion);    
+  }
+
+
+
+alert("You get to a herd of monkeys.");
+choice = prompt("Do you wanna swing with monkeys or keep on movin?");
+
+if(choice =="swing with monkeys"){
+  inventory.Meercat = 1;
+  console.log("Meercat = "+inventory.Meercat);
+}
+else if(choice=="Check"){
+   checkInv(animal);
+}
+else
+  {
+    alert("Yay, you are on the right path!");
+    console.log("Lion = "+inventory.Lion);
+  }
+
+        
+    function sandydesert(){
+        var desert = new Array();
+        desert[0]= "This water is so fresh, you are able to drink it!!!";
+        desert[1]= "You see some hyenas in the distance, and you start running faster the other way!";
+        desert[2]= "The the boulders are rolling towards you start running North!"
+        desert[3]= "The sun is smothering you, so you keep cool, with some water in a nearby cactus!"
+        desert[4]= "There are pironhas in the water Hole!"
+        
+        var randomHole = desert[Math.floor(Math.random() * sandydesert.length)];
+        document.write(randomHole);
+        if(randomHole=="There are pironhas in the water Hole!")
+        {
+            pironhas();
+        }
+        else if(randomHole=="This water is so fresh, you are able to drink it!!!")
+        {
+            alert(randomHole);
+            score=+ 100;
+            forest();
+        }
+        else
+        alert(randomHole);
+        forest();
+
+    }
+
+    function forest(){
+        alert("You now are are past the waterhole! The snails are coming out from the dirt!");
+        
+        var forest = prompt("Will you partake of these snails, or let them live?");
+
+        if (forest =="yes"){alert("OH NO! These snails were posion, so you died!")}
+
+        else {alert("Great choice! Those snails were poison!, and now you get to move on and make your way out of the forest!")}
+
+    }
+
+    var food =  ["apple", "orange", "peach", "pear"]
+
+var findFood = function(foodName, list){
+    for(var i = 0; i < list.length; i++){
+        if(list[i] === foodName){
+            if(foodName = "orange"){
+            return "you die";
+            }else if(foodName = "apple"){
+            return "you turn red!";
+            }else if(foodName = "peach"){
+            return "you turn orange!";
+            }else{
+            return "you get to eat it!";
+            }
+        }
+    }
+}
+    alert("You see a fruit tree at the end of the path.");
+
+    var fruitTree = prompt("You get to pick either an apple, orange, peach or pear. Which one do you choose?")
+
+        findFood(fruitTree, food);
+
+    var userInput = prompt("How many fruits were you able to get off of the tree?");
+switch(userInput) {
+    case 1:
+    alert("You now shrink til you die!");
+    break;
+    case 2:
+    alert("The game has ended!");
+    break;
+    case 3:
+    alert("You are out of luck, you are now just a follower in the pack!");
+    break;
+    default:
+    alert("You are now a king of the Jungle");
+    break;
+}
+}
+                </script>
+         </body>
+   </html>             
